@@ -1,0 +1,56 @@
+.translationBox{
+    width: 100%;
+    min-height: 300px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+}
+.translationBox .nav{
+    width: 100%;
+    height: 45px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid lightgray;
+}
+.translationBox select{
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    color: #606060;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.translationBox select:hover{
+    color: #000000;
+}
+.translationBox .textBox{
+    width: 100%;
+    height: 255px;
+    display: flex;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+
+}
+.translationBox .fromDiv, .translationBox .toDiv{
+    width: 50%;
+    height: 100%;
+}
+.translationBox .fromDiv textarea,.translationBox .toDiv textarea{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-style: none;
+    resize: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.translationBox .fromDiv{
+    border-right: 2px solid lightgray;
+}
