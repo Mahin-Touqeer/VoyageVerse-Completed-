@@ -522,7 +522,7 @@ function displayReview(x) {
                               <img src="${wishListDoc.data().photoURL}">
                               
                               <div>
-                                <b>${wishListDoc.data().username}</b> &nbsp;
+                                <b>${wishListDoc.data().username}</b> <br>
                                 <span>
                                 ${iconString}
                                 </span>
@@ -564,7 +564,7 @@ function addReviewComponent(dummyRating, dummyComment, dummyID, dummyinfo) {
                               <img src="${dummyinfo.data().photoURL}">
                               
                               <div>
-                                <b>${dummyinfo.data().username}</b> &nbsp;
+                                <b>${dummyinfo.data().username}</b> <br>
                                 <span>
                                 ${iconString}
                                 </span>
