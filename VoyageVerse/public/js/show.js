@@ -563,7 +563,7 @@ function addReviewComponent(dummyRating, dummyComment, dummyID, dummyinfo) {
                           <span class="bahar">
                               <img src="${dummyinfo.data().photoURL}">
                               
-                              <div>
+                              <div  style="min-width:65px">
                                 <b>${dummyinfo.data().username}</b> <br>
                                 <span style="max-height: 50%;">
                                 ${iconString}
