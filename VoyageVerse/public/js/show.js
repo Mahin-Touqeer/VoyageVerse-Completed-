@@ -523,7 +523,7 @@ function displayReview(x) {
                               
                               <div>
                                 <b>${wishListDoc.data().username}</b> <br>
-                                <span>
+                                <span style="max-height: 50%;">
                                 ${iconString}
                                 </span>
                               </div>
@@ -565,7 +565,7 @@ function addReviewComponent(dummyRating, dummyComment, dummyID, dummyinfo) {
                               
                               <div>
                                 <b>${dummyinfo.data().username}</b> <br>
-                                <span>
+                                <span style="max-height: 50%;">
                                 ${iconString}
                                 </span>
                               </div>
