@@ -521,7 +521,7 @@ function displayReview(x) {
                               
                               <img src="${wishListDoc.data().photoURL}">
                               
-                              <div>
+                              <div style="min-width:65px">
                                 <b>${wishListDoc.data().username}</b> <br>
                                 <span style="max-height: 50%;">
                                 ${iconString}
