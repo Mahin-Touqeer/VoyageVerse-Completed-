@@ -17,6 +17,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const cloudName = 'dqx3jfx7m';
+const uploadPreset = 'VoyageVerse';
+const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
 
 let body = document.querySelector("body");
 let theme_dark = document.querySelector(".theme-dark");
@@ -118,16 +121,33 @@ let addBody = function () {
 
   //review functionality
   let reviewForm = document.querySelector(".reviewForm");
-  let comment = document.querySelector("#comment")
+  let comment = document.querySelector("#comment");
+  let reviewImage = document.querySelector("#reviewImage");
   reviewForm.addEventListener("submit", async (event) => {
     event.preventDefault()
     if (auth.currentUser) {
       if (comment.value) {
         event.preventDefault()
         const ratingValue = getSelectedRadioValue();
+        let imageURLarr = [];
+        if (reviewImage.files.length) {
+          for (let file of reviewImage.files) {
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', uploadPreset);
+            const response = await fetch(url, {
+              method: 'POST',
+              body: formData,
+            });
+            const data = await response.json();
+            console.log('Uploaded:', data);
+            imageURLarr.push(data.secure_url);
+          }
+        
         let docRef = await addDoc(collection(db, "reviews"), {
           rating: parseInt(ratingValue),
           comment: comment.value,
+          photos: imageURLarr,
           owner: auth.currentUser.uid,
         })
         console.log(docRef);
@@ -544,6 +564,18 @@ function displayReview(x) {
                             <span>&#8220;${review.comment}&#8221;</span>
                         </div>`
     reviewDiv.appendChild(reviewCard)
+    if (review.photos.length) { 
+      let abc = ``;
+      for (let photo of review.photos) {
+        abc += `<img class="w-33" style="width:33%;height:auto;border-radius:8px" src="${photo}">`
+      }
+      let xyz = `<div class="w-100 mb-2" style="display:flex;overflow-x: auto;
+        scroll-snap-type: x mandatory;
+          gap: 10px;">
+          ${abc}
+      </div>`
+      reviewDiv.innerHTML = reviewDiv.innerHTML + xyz
+    }
     deleteReviewBtn()
   })
 }
