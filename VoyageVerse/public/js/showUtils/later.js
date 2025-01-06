@@ -110,6 +110,10 @@ let later = `<div class="col-md-10   review offset-lg-1">
                     <input type="radio" id="star5" name="reviews" value="5" checked>
                     <label for="star5"><i class="fa-solid fa-star"></i></label>
                 </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">&nbsp;Share your travel moments</label>
+                    <input type="file" id="reviewImage" class="form-control" placeholder="select image" accept="image/*" multiple>
+                </div>
                 
                   <div class="mb-3 mt-3">  
                     <textarea id="comment" class="form-control" rows="3" cols="30" placeholder="Please add review" required></textarea>
