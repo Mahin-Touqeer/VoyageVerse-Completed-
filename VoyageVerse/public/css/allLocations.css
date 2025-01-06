@@ -1,0 +1,62 @@
+.outerDiv{
+    display: flex;
+    flex-wrap:wrap ;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+.allListings{
+    text-align: center  ;
+    }
+.card{
+        display: inline-block;
+        padding: 1%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        border-radius: 13px;
+        margin-bottom: 10px;
+    }
+.indexImages{
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        border-radius: 13px 13px 0px 0px;
+        transition: 0.2s;
+    }
+.indexImages:hover{
+        opacity: 90%;
+    }
+.listingLink{
+        margin: 0%;
+        padding: 0%;
+    }
+.anchor{
+        display: inline;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        text-decoration: none;
+        width: 22rem;
+        transition: opacity 0.6s;  
+        animation: down;
+        animation-duration: 1s;
+}
+@keyframes down {
+    from{
+        transform:translateY(20px) ;
+        opacity: 0%;
+    }
+    to{
+        transform:translateY(0%) ;
+        opacity: 100%;
+    }
+}
+.pagination li a{
+    color: black;
+}
+.pagination li a:hover{
+    cursor: pointer;
+    color: rgb(73, 73, 73);
+}
+.selected{
+    background-color: rgb(255, 236, 202);
+}
