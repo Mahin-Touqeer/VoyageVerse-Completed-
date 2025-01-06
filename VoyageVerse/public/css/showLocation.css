@@ -1,0 +1,552 @@
+.card{
+    display: flex ;
+    flex-direction: row;
+    padding: 0%;
+    border: none;
+}
+
+:root{
+    --containerWidth: 780px;
+    --maxHeight:15rem;
+}
+.card .imageDiv{
+    display: inline-block;
+    display: flex;
+    justify-content:center ;
+    position: relative;
+    height: 30rem;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: black;
+    width: var(--containerWidth);
+   
+}
+.card .card-body{
+    display: inline-block;
+    /* width: 20rem; */
+}
+.card .card-body .card-title{
+    display: flex;
+    justify-content: space-between;
+}
+.card form{
+    display: inline-block;
+}
+.car .card-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.showImages{
+    opacity: 0;
+    height: 30rem;
+    max-width: 850px;
+    object-fit: cover;
+    position: absolute;
+    pointer-events: none;
+    width: var(--containerWidth);
+}
+.placeholder-glow{
+    position: absolute;
+    z-index: 1;
+    width: var(--containerWidth);
+    height: 30rem;
+    background-color: white;
+}
+.placeholder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.opacity{
+    opacity: 1;
+}
+.active{
+    opacity: 1;
+    animation: slideIn 1s ease-in-out 0s 1 ;
+}
+.inactive{
+    opacity: 0;
+    animation: slideOut 1s ease-in-out 0s 1 ;
+}
+@keyframes slideIn {
+    0%{
+        opacity: 0;
+        transform: translateX(calc(var(--containerWidth)));
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideOut {
+    0%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(calc(-1 * (var(--containerWidth))));
+        opacity: 0;
+    }
+}
+
+
+
+.moves{
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    transform: translateY(-50%);
+}
+.moves i{
+    font-size: 30px;
+    color: white;
+}
+#right{
+    right: 0px;
+    z-index: 10;
+}
+#left{
+    left: 0px;
+}
+
+
+
+
+
+
+/* wish btn */
+.wishlist-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff4b5c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.heart:before, .heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.wishlist-btn.clicked .heart {
+    border: 3px solid #fff;
+    background-color: transparent;
+}
+
+.wishlist-btn.clicked .heart:before {
+    transform: translate(-100%,-50%);
+    background-color: transparent;
+}
+.wishlist-btn.clicked .heart:after {
+    transform: translate(0%,-50%);
+    background-color: transparent;
+}
+
+.wishlist-btn:hover {
+    background-color: #e74455;
+}
+
+
+
+.converterAndWeatherDiv{
+    display:flex ;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@1..1000&display=swap');
+/* styling converter */
+
+.converter {
+    width: 49.8%;
+    background: #fffadd;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 1rem;
+    height: auto;
+    min-height: 293px;
+}
+.converterSpecific{
+    padding: 0%;
+}
+.converter h5 {
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 0px ;
+    margin-bottom: 20px;
+    background-color: hsl(35, 100%, 65%);
+    color: white;
+    font-size:1.5rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.converter .input-section {
+    margin-bottom: 20px;
+}
+.fromImg, .toImg{
+    transform: translateX(10%);
+    /* border-radius: 100px; */
+}
+.converter input,.converter select,.converter button {
+    /* margin-right: 5px; */
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.converter select{
+    border-radius: 0px 5px 5px 0px;
+}
+
+.converter button {
+    background-color: #F16C1C;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.converter button:hover {
+    background-color: #cf590f;
+}
+
+.converter .result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+/* styling weather */
+.weather{
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    /* padding:20px  8% 20px 20px; */
+    padding: 0px;
+    overflow: hidden;
+    /* background-image: url(./snow.jpg);
+    background-size:cover; */
+}
+.weather .placeholder-glow{
+        height:293px ;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0%;
+        /* background-color: white; */
+        z-index: 5;
+}
+.placeholder-glow .placeholder{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.background_clip{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    filter: blur(3px) ;
+    z-index: -1;
+}
+
+.weather-app {
+    background: transparent;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0px 0px 40px 20px;
+
+}
+
+
+.weatherImg h2{
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 150px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    filter: drop-shadow(0px 2px 1px black);
+    font-weight: 1;
+}
+.weatherImg h2 span{
+    font-size: 60px;
+    position: absolute;
+
+    top: 10%;
+    right: -30%;
+}
+.weatherImg h4{
+    filter: drop-shadow(0px 2px 1px black);
+}
+.weather-info {
+    /* margin-top: 20px; */
+    font-size: 1.1em;
+    /* backdrop-filter: blur(10px); */
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 5%;
+    /* border:1px solid lightgray;  */
+     /* background-color: pink; */
+    color: white;
+    filter: drop-shadow(2px 2px 1px black);
+}
+
+
+
+/* styling rating */
+.rating-css{
+    display: inline-block;
+}
+.rating-css input{
+    display: none;
+} 
+.rating-css label i{
+    color:gold;
+    margin: 0;
+    transition: ease 0.15s;
+}
+.rating-css input:checked + label ~label i{
+    color: rgb(73, 73, 73);
+}
+
+/* map */
+#map{
+    border-radius: 10px;
+    width: 100%;
+    height: 400px; 
+}
+
+/* styling review */
+.reviewDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.reviewCard{
+    /* display: inline-block; */
+    padding: 12px;
+    border-top: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.ratingDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.ratingDiv .dropdown-menu{
+    position: relative;
+}
+.ratingDiv .bahar{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    display: flex;
+    position: relative;
+    min-width: 50%;
+    /* min-height: 41.14px; */
+
+}
+.bahar div{
+     flex-wrap: wrap;
+     width: 100%;
+     /* background-color: pink; */
+     position: relative;
+}
+
+.bahar img{
+    height: 41px;
+    /* width: 41px; */
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    margin-right: 1rem;
+}
+.bahar div b{
+    width: 60px;
+}
+.bahar div span{
+    /* background-color: white; */
+    max-height: 50%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.threeDotsBtn{
+    border: none;
+    outline: none;
+    width: auto;
+    align-self: flex-end;
+    background-color: transparent;
+}
+.commentDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.commentDiv span{
+    font-size: 1.2rem;
+    margin-left:4px ;
+}
+.commentDiv button{
+    align-self: flex-end ;
+}
+@media(width>800px){
+    .reviewCard{
+        width: 49.5%;
+    }
+}
+@media(width<800px){
+    .reviewCard{
+        width: 100%;
+    }
+}
+
+@media(width<1300px){
+    .card{
+        flex-direction: column;
+    }
+    .card .imageDiv{
+        width: 95% !important;
+        margin: auto;  
+        height: 28rem;
+
+
+    }
+    .card .imageDiv img{
+        width: 100% !important;
+        align-self: center;
+        height: auto;
+    }
+    .review{
+        padding: 16px;
+    }
+    .converter{
+        width: 100%;
+    }
+    .weather{
+        min-height: auto;
+    }
+    .converterSpecific{
+        padding-bottom: 10px;
+    }
+    .converter .result {
+        margin-top: 30px;
+    }
+
+}
+@media (width<560px){
+    .wishlist-btn {
+        font-size: 0.8rem;
+    }
+    .card .imageDiv{
+        height:var(--maxHeight);  
+    }
+    .background_clip{
+        height: 120%;
+        width: auto;
+    }.weather{
+        padding-left: 10px;
+    }
+    .weatherImg h2 span{
+        right: -5%;
+        top: -2%;
+    }
+    .weatherImg{
+    margin: 0 10px 10px 0px;
+    }
+    .weatherImg h2{
+    font-size: 100px;
+    }
+    .weather-info{
+    padding-right: 10px;
+    font-size: 0.8rem;
+    }
+
+    #amount{
+        width: 98%;
+    }
+    .converterSpecific{
+        margin-top: 0px;
+        min-height: auto;
+    }
+    .converterSpecific h5{
+        margin-bottom: 5px;
+        padding: 5px;
+        font-size: 1.1rem;
+    }
+    .input-section{
+        margin-bottom: 0px !important;
+    }
+    .result{
+        margin-top: 0.8em !important;
+    }
+    .converter input,.converter select,.converter button {
+        /* margin-right: 5px; */
+        padding: 10px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .fromImg,.toImg{
+        width: 0.8em;
+    }
+
+    .weatherImg h4{
+        font-size: 1.01rem;
+    }
+    #map{
+        height: 300px;
+    }
+    .translationBox .fromDiv, .translationBox .toDiv{
+        width: 100%;
+        height: 50%;
+    }
+    .translationBox .fromDiv{
+        border-bottom: 2px solid lightgray;
+
+    }
+    .card-body{
+        padding-bottom: 0px;
+    }
+
+}
