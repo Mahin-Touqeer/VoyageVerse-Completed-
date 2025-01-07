@@ -83,7 +83,7 @@ let addBody = function () {
                       <p class="card-text">Currency: ${currencyName[0].currencies[currency].name} (${currency})</p>
                       <p class="card-text languagesPara">Language(s): </p>
 
-                      <a href="/../../views/destinations/edit.html" class="btn btn-warning editBtn" style="color:white">Edit</a>
+                      <a href="../../views/destinations/edit.html" class="btn btn-warning editBtn" style="color:white">Edit</a>
                       <span>
                         <button class="btn btn-outline-warning deleteBtnTrigger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
                       </span>    
