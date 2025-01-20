@@ -1,5 +1,5 @@
-const API_KEY = 'fBsYOKL6dT9WJ238wNfP2rzqW6vsL4aQ';
-const API_SECRET = 'OnrtAqR92ixmoVsc';
+const API_KEY = 'WZIGBoWj9xLv6JGXdeAHqAbxDsGigyK7';
+const API_SECRET = 'OxGW5AODuCiBYQse';
 
 async function getAccessToken() {
     try {
